@@ -26,4 +26,14 @@ class LinkedList
 
     @size += 1
   end
+
+  def to_s
+    current_node = @head
+    node_arr = []
+    until current_node.nil?
+      node_arr << "( #{current_node.value} ) -> "
+      current_node = current_node.next_node
+    end
+    (node_arr << 'nil').join
+  end
 end
