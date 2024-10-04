@@ -17,12 +17,21 @@ class LinkedList
   def append(value)
     node_to_add = Node.new(value)
 
-    if size.zero?
+    if @size.zero?
       @head = node_to_add
     else
       @tail.next_node = node_to_add
     end
     @tail = node_to_add
+
+    @size += 1
+  end
+
+  def prepend(value)
+    node_to_add = Node.new(value, @head)
+
+    @head = node_to_add
+    @tail = node_to_add if @size.zero?
 
     @size += 1
   end
