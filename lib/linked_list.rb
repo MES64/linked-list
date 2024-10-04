@@ -36,6 +36,14 @@ class LinkedList
     @size += 1
   end
 
+  def at(index)
+    return nil if index >= @size || index.negative?
+
+    current_node = @head
+    index.times { current_node = current_node.next_node }
+    current_node
+  end
+
   def to_s
     current_node = @head
     node_arr = []
