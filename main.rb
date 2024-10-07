@@ -51,3 +51,14 @@ end
 p linked_list.pop
 puts linked_list
 puts linked_list.size
+
+puts ''
+
+-2.upto(3) { |value| linked_list.append(value) }
+puts linked_list
+puts linked_list.contains?(-3)
+puts linked_list.contains?(-2)
+puts linked_list.contains?(0)
+puts linked_list.contains?(3)
+puts linked_list.contains?(4)
+puts linked_list.contains?('hi')

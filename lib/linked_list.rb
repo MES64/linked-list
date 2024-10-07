@@ -69,6 +69,16 @@ class LinkedList
     old_head
   end
 
+  def contains?(value)
+    current_node = @head
+    until current_node.nil?
+      return true if current_node.value == value
+
+      current_node = current_node.next_node
+    end
+    false
+  end
+
   def to_s
     current_node = @head
     node_arr = []
