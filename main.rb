@@ -39,3 +39,15 @@ end
 p linked_list.pop
 puts linked_list
 puts linked_list.size
+
+puts ''
+
+-2.upto(3) { |value| linked_list.append(value) }
+puts linked_list
+linked_list.size.times do
+  puts linked_list.shift.value
+  puts linked_list
+end
+p linked_list.pop
+puts linked_list
+puts linked_list.size

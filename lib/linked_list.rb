@@ -59,6 +59,16 @@ class LinkedList
     old_tail
   end
 
+  def shift
+    return nil if @size.zero?
+
+    old_head = @head
+    @tail = nil if @size == 1
+    @head = @head.next_node
+    @size -= 1
+    old_head
+  end
+
   def to_s
     current_node = @head
     node_arr = []
