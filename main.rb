@@ -28,3 +28,14 @@ puts linked_list.at(5).value
 p linked_list.at(6)
 p linked_list.at(-1)
 p LinkedList.new.at(0)
+
+puts ''
+
+puts linked_list
+linked_list.size.times do
+  puts linked_list.pop.value
+  puts linked_list
+end
+p linked_list.pop
+puts linked_list
+puts linked_list.size
