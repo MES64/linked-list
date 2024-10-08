@@ -62,3 +62,15 @@ puts linked_list.contains?(0)
 puts linked_list.contains?(3)
 puts linked_list.contains?(4)
 puts linked_list.contains?('hi')
+puts LinkedList.new.contains?(0)
+
+puts ''
+
+puts linked_list
+p linked_list.find(-3)
+p linked_list.find(-2)
+p linked_list.find(0)
+p linked_list.find(3)
+p linked_list.find(4)
+p linked_list.find('hi')
+p LinkedList.new.find(0)

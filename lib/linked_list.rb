@@ -79,6 +79,16 @@ class LinkedList
     false
   end
 
+  def find(value)
+    current_node = @head
+    @size.times do |index|
+      return index if current_node.value == value
+
+      current_node = current_node.next_node
+    end
+    nil
+  end
+
   def to_s
     current_node = @head
     node_arr = []
