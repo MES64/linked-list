@@ -74,3 +74,30 @@ p linked_list.find(3)
 p linked_list.find(4)
 p linked_list.find('hi')
 p LinkedList.new.find(0)
+
+puts ''
+
+linked_list = LinkedList.new
+puts linked_list
+linked_list.insert_at(0, 1)
+linked_list.insert_at(0, -1)
+puts linked_list
+linked_list.insert_at(0, 0)
+puts linked_list
+linked_list.insert_at(-1, 0)
+puts linked_list
+linked_list.shift
+puts linked_list
+linked_list.insert_at(1, 1)
+puts linked_list
+linked_list.insert_at(100, 1)
+puts linked_list
+linked_list.insert_at(101, 0)
+puts linked_list
+linked_list.insert_at(102, linked_list.size)
+puts linked_list
+linked_list.insert_at(103, 2)
+puts linked_list
+puts linked_list.size
+puts linked_list.head.value
+puts linked_list.tail.value
