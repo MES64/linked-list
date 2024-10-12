@@ -101,3 +101,41 @@ puts linked_list
 puts linked_list.size
 puts linked_list.head.value
 puts linked_list.tail.value
+
+puts ''
+puts linked_list
+linked_list.remove_at(-1)
+linked_list.remove_at(linked_list.size)
+puts linked_list
+linked_list.remove_at(0)
+puts linked_list
+linked_list.remove_at(linked_list.size - 1)
+puts linked_list
+linked_list.remove_at(2)
+puts linked_list
+puts linked_list.head.value
+puts linked_list.tail.value
+puts linked_list.size
+linked_list.remove_at(0)
+puts linked_list
+linked_list.insert_at(0, 0)
+puts linked_list
+linked_list.remove_at(2)
+puts linked_list
+linked_list.insert_at(1, 2)
+puts linked_list
+linked_list.remove_at(1)
+puts linked_list
+linked_list.remove_at(0)
+puts linked_list
+linked_list.insert_at(0, 0)
+puts linked_list
+linked_list.remove_at(1)
+puts linked_list
+linked_list.remove_at(0)
+puts linked_list
+linked_list.remove_at(0)
+puts linked_list
+p linked_list.head
+p linked_list.tail
+puts linked_list.size

@@ -98,6 +98,18 @@ class LinkedList
     insert_at_general(value, index)
   end
 
+  def remove_at(index)
+    return nil if index >= @size || index.negative? || @size.zero?
+    return remove_at_size_one if @size == 1
+    return remove_at_start if index.zero?
+
+    current_node = @head
+    (index - 1).times { current_node = current_node.next_node }
+    @tail = current_node if index == @size - 1
+    current_node.next_node = current_node.next_node.next_node
+    @size -= 1
+  end
+
   def to_s
     current_node = @head
     node_arr = []
@@ -141,5 +153,16 @@ class LinkedList
     (index - 1).times { current_node = current_node.next_node }
     current_node.next_node = Node.new(value, current_node.next_node)
     @size += 1
+  end
+
+  def remove_at_size_one
+    @head = nil
+    @tail = nil
+    @size = 0
+  end
+
+  def remove_at_start
+    @head = @head.next_node
+    @size -= 1
   end
 end
