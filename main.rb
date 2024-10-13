@@ -139,3 +139,15 @@ puts linked_list
 p linked_list.head
 p linked_list.tail
 puts linked_list.size
+
+puts ''
+list = LinkedList.new
+
+list.append('dog')
+list.append('cat')
+list.append('parrot')
+list.append('hamster')
+list.append('snake')
+list.append('turtle')
+
+puts list

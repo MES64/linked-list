@@ -4,7 +4,8 @@ require_relative 'node'
 
 # LinkedList class implements a linked list
 # Includes information about the head, tail, and size of the list
-# Methods: head, tail, size
+# Methods: head, tail, size, append, prepend, at, pop, shift, contains?, find,
+# insert_at, remove_at, to_s
 class LinkedList
   attr_reader :head, :tail, :size
 
