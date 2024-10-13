@@ -86,11 +86,12 @@ class LinkedList
 
   def insert_at(value, index)
     return nil if index > @size || index.negative?
-    return insert_at_empty_list(value) if @size.zero?
-    return insert_at_start(value) if index.zero?
-    return insert_at_end(value) if index == @size
+    return prepend(value) if index.zero?
+    return append(value) if index == @size
 
-    insert_at_general(value, index)
+    current_node = at(index - 1)
+    current_node.next_node = Node.new(value, current_node.next_node)
+    @size += 1
   end
 
   def remove_at(index)
@@ -122,32 +123,6 @@ class LinkedList
     current_node = current_node.next_node until current_node.next_node == @tail
     current_node.next_node = nil
     @tail = current_node
-  end
-
-  def insert_at_empty_list(value)
-    new_node = Node.new(value)
-    @head = new_node
-    @tail = new_node
-    @size += 1
-  end
-
-  def insert_at_start(value)
-    @head = Node.new(value, @head)
-    @size += 1
-  end
-
-  def insert_at_end(value)
-    new_node = Node.new(value)
-    @tail.next_node = new_node
-    @tail = new_node
-    @size += 1
-  end
-
-  def insert_at_general(value, index)
-    current_node = @head
-    (index - 1).times { current_node = current_node.next_node }
-    current_node.next_node = Node.new(value, current_node.next_node)
-    @size += 1
   end
 
   def remove_at_size_one
