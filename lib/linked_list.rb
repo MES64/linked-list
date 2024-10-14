@@ -90,8 +90,7 @@ class LinkedList
     return nil if index >= @size || index.negative?
     return shift if index.zero?
 
-    current_node = @head
-    (index - 1).times { current_node = current_node.next_node }
+    current_node = at(index - 1)
     @tail = current_node if index == @size - 1
     current_node.next_node = current_node.next_node.next_node
     @size -= 1
