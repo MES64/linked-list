@@ -47,16 +47,8 @@ class LinkedList
   end
 
   def pop
-    return nil if @size.zero?
-
     old_tail = @tail
-    if @size == 1
-      @head = nil
-      @tail = nil
-    else
-      pop_general
-    end
-    @size -= 1
+    remove_at(@size - 1)
     old_tail
   end
 
@@ -113,14 +105,5 @@ class LinkedList
       current_node = current_node.next_node
     end
     (node_arr << 'nil').join
-  end
-
-  private
-
-  def pop_general
-    current_node = @head
-    current_node = current_node.next_node until current_node.next_node == @tail
-    current_node.next_node = nil
-    @tail = current_node
   end
 end

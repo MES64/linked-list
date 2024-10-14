@@ -170,3 +170,5 @@ list.append('snake')
 list.append('turtle')
 
 puts list
+
+# TODO: use at in remove_at
