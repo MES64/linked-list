@@ -95,9 +95,8 @@ class LinkedList
   end
 
   def remove_at(index)
-    return nil if index >= @size || index.negative? || @size.zero?
-    return remove_at_size_one if @size == 1
-    return remove_at_start if index.zero?
+    return nil if index >= @size || index.negative?
+    return shift if index.zero?
 
     current_node = @head
     (index - 1).times { current_node = current_node.next_node }
@@ -123,16 +122,5 @@ class LinkedList
     current_node = current_node.next_node until current_node.next_node == @tail
     current_node.next_node = nil
     @tail = current_node
-  end
-
-  def remove_at_size_one
-    @head = nil
-    @tail = nil
-    @size = 0
-  end
-
-  def remove_at_start
-    @head = @head.next_node
-    @size -= 1
   end
 end
